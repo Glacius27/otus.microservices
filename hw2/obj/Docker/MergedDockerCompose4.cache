@@ -1,0 +1,33 @@
+services:
+  otus.health:
+    build:
+      context: /Users/german/Projects/otus.health
+      dockerfile: otus.health/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: otus.health
+      target: base
+    container_name: otus.health
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: otus:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/netcoreapp3.1/otus.health.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 8000
+      target: 80
+    tty: true
+    volumes:
+    - /Users/german/Projects/otus.health/otus.health:/app:rw
+    - /Users/german/vsdbg/vs2017u5:/remote_debugger:rw
+    - /Users/german/.nuget/packages:/root/.nuget/packages:ro
+    - /Users/german/Projects/otus.health:/src:rw
+version: '3.4'

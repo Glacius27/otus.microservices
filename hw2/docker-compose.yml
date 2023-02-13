@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  otus.health:
+    image: ${DOCKER_REGISTRY-}otus
+    build:
+      context: .
+      dockerfile: otus.health/Dockerfile

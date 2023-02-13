@@ -1,0 +1,10 @@
+/Users/german/Projects/otus.health/bin/Debug/otus.health.deps.json
+/Users/german/Projects/otus.health/bin/Debug/otus.health.runtimeconfig.json
+/Users/german/Projects/otus.health/bin/Debug/otus.health.runtimeconfig.dev.json
+/Users/german/Projects/otus.health/bin/Debug/appsettings.Development.json
+/Users/german/Projects/otus.health/bin/Debug/appsettings.json
+/Users/german/Projects/otus.health/bin/Debug/otus.health.dll
+/Users/german/Projects/otus.health/bin/Debug/otus.health.pdb
+/Users/german/Projects/otus.health/obj/Debug/docker-compose.dcproj.AssemblyReference.cache
+/Users/german/Projects/otus.health/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache
+/Users/german/Projects/otus.health/obj/Debug/docker-compose.dcproj.CopyComplete

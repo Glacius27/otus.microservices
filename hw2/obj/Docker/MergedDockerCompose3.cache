@@ -1,0 +1,12 @@
+services:
+  otus.health:
+    build:
+      context: /Users/german/Projects/otus.health
+      dockerfile: otus.health/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: otus
+    ports:
+    - published: 8000
+      target: 8000
+version: '3.4'

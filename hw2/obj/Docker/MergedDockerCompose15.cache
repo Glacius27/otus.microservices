@@ -1,0 +1,14 @@
+name: dockercompose6261361147664904423
+services:
+  otus.health:
+    build:
+      context: /Users/german/Projects/otus.health
+      dockerfile: otus.health/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: otus
+    networks:
+      default: null
+networks:
+  default:
+    name: dockercompose6261361147664904423_default
