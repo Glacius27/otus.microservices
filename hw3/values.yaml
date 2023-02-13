@@ -1,0 +1,8 @@
+architecture: standalone
+auth:
+  enabled: true
+  rootuser: "root"
+  rootPassword: "root"
+  usernames: [admin]
+  passwords: [admin]
+  databases: [users]

@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{535F984B-C162-4CC2-AA0F-F5E3234BE4A1}|Default">
+  <MonoDevelop.Ide.ItemProperties.application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+    <Files>
+      <File FileName="Program.cs" Line="29" Column="101" />
+      <File FileName="Response.cs" Line="1" Column="1" />
+      <File FileName="Startup.cs" Line="33" Column="1" />
+      <File FileName="database/DataBaseService.cs" Line="16" Column="1" />
+      <File FileName="appsettings.json" />
+      <File FileName="database/DataBaseSettings.cs" Line="1" Column="1" />
+      <File FileName="User.cs" />
+      <File FileName="Controllers/UserController.cs" Line="1" Column="1" />
+      <File FileName="ErrorCodes.cs" />
+      <File FileName="Dockerfile" />
+      <File FileName="../../k8s/deployment.yaml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="application" expanded="True">
+            <Node name="application" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="database" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/german/Projects/otus.microservices/hw3/application/application/database/DataBaseService.cs" relfile="database/DataBaseService.cs" line="12" column="1" />
+      <Breakpoint file="/Users/german/Projects/otus.microservices/hw3/application/application/Controllers/UserController.cs" relfile="Controllers/UserController.cs" line="27" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

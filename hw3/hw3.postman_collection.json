@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "fb5da9ec-86a4-4d3e-b976-68c501341272",
+		"name": "hw3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4846465"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"    pm.collectionVariables.set(\"UserID\",jsonData[\"data\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Mickey\",\n  \"lastName\": \"Mouse\",\n  \"email\": \"mickey@disney.com\",\n  \"phone\": \"9269090\"\n}"
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/User",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{BaseUrl}}/User/{{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User",
+						"{{UserID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Donald\",\n  \"lastName\": \"Duck\",\n  \"email\": \"donald@disney.com\",\n  \"phone\": \"001001\"\n}"
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/User/{{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User",
+						"{{UserID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{BaseUrl}}/User/{{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User",
+						"{{UserID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var responseJSON = JSON.parse(responseBody)",
+					"pm.collectionVariables.set(\"userID\", responseJSON[\"data\"])"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "arch.homework"
+		},
+		{
+			"key": "UserID",
+			"value": ""
+		}
+	]
+}

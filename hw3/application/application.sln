@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.25
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "application", "application\application.csproj", "{11C61C0D-5ADC-44B3-B0FD-2E56F9AD0862}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{ECB39614-9E4A-48FA-8521-C7D069EF65A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11C61C0D-5ADC-44B3-B0FD-2E56F9AD0862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C61C0D-5ADC-44B3-B0FD-2E56F9AD0862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C61C0D-5ADC-44B3-B0FD-2E56F9AD0862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C61C0D-5ADC-44B3-B0FD-2E56F9AD0862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB39614-9E4A-48FA-8521-C7D069EF65A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB39614-9E4A-48FA-8521-C7D069EF65A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB39614-9E4A-48FA-8521-C7D069EF65A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB39614-9E4A-48FA-8521-C7D069EF65A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A16B5F3-5B27-4B27-BD0C-E02B5E84A11B}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.FileWidth = 80
+		$4.TabsToSpaces = True
+		$4.scope = text/plain
+		$0.TextStylePolicy = $5
+		$5.inheritsSet = null
+		$5.scope = text/x-json
+		$0.TextStylePolicy = $6
+		$6.inheritsSet = null
+		$6.scope = text/x-web
+	EndGlobalSection
+EndGlobal

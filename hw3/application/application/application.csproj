@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <!--<DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>-->
+    <ContainerImageName>glacius27/repo</ContainerImageName>
+    <ContainerImageTag>hw3</ContainerImageTag>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="MongoDB.Driver" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Swashbuckle.AspNetCore" />
+    <None Remove="database\" />
+    <None Remove="Microsoft.NET.Build.Containers" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="0.3.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="database\" />
+  </ItemGroup>
+</Project>
