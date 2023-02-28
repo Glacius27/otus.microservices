@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "7db8283a-74f2-4974-89c3-37b102776ba7",
+		"name": "hw6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4846465"
+	},
+	"item": [
+		{
+			"name": "RegisterFirstUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"    pm.collectionVariables.set(\"User1ID\",jsonData[\"data\"]);",
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"user1login\", pm.collectionVariables.replaceIn('{{$randomEmail}}'));",
+							"pm.collectionVariables.set(\"user1password\", pm.collectionVariables.replaceIn('{{{$randomPassword}}'));",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"email\": \"{{user1login}}\",\n  \"phone\": \"{{$randomPhoneNumber}}\",\n  \"password\": \"{{user1password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/User",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFirstUser (not auth)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{BaseUrl}}/User/{{User1ID}}",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User",
+						"{{User1ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginFirstUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"    pm.collectionVariables.set(\"user1token\",jsonData[\"data\"]);",
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{user1login}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{user1password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/Auth/",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"Auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateFirstUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user1token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"email\": \"{{$randomEmail}}\",\n  \"phone\": \"{{$randomPhoneNumber}}\",\n  \"password\": \"{{$randomPassword}}\"\n}"
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/User/{{User1ID}}",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User",
+						"{{User1ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterSecondUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"user2login\", pm.collectionVariables.replaceIn('{{$randomEmail}}'));",
+							"pm.collectionVariables.set(\"user2password\", pm.collectionVariables.replaceIn('{{{$randomPassword}}'));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"email\": \"{{user2login}}\",\n  \"phone\": \"{{$randomPhoneNumber}}\",\n  \"password\": \"{{user2password}}\"\n}"
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/User",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginSecondUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"    pm.collectionVariables.set(\"user2token\",jsonData[\"data\"]);",
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{user2login}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{user2password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/Auth/",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"Auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TryToGetUser1DataByUser2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user2token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{BaseUrl}}/User/{{User1ID}}",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User",
+						"{{User1ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TryToUpdateUser1DatabyUser2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user2token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"email\": \"{{$randomEmail}}\",\n  \"phone\": \"{{$randomPhoneNumber}}\",\n  \"password\": \"{{$randomPassword}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BaseUrl}}/User/{{User1ID}}",
+					"protocol": "http",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"User",
+						"{{User1ID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "arch.homework"
+		},
+		{
+			"key": "User1ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user1login",
+			"value": ""
+		},
+		{
+			"key": "user1password",
+			"value": ""
+		},
+		{
+			"key": "user1token",
+			"value": ""
+		},
+		{
+			"key": "user2login",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user2password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user2token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
