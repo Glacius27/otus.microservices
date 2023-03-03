@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/otus-order-service.props" />
+</Project>

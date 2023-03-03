@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{57641A21-5420-4825-83DF-AD1EC1026081}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.otus-order-service PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="otus-order-service/Properties/launchSettings.json">
+    <Files>
+      <File FileName="otus-order-service/Properties/launchSettings.json" Line="28" Column="2" />
+      <File FileName="otus-order-service/OrderRequest.cs" Line="19" Column="1" />
+      <File FileName="otus-order-service/appsettings.Development.json" />
+      <File FileName="otus-order-service/appsettings.json" Line="3" Column="90" />
+      <File FileName="otus-order-service/Controllers/OrderController.cs" Line="51" Column="14" />
+      <File FileName="otus-order-service/Dockerfile" Line="1" Column="1" />
+      <File FileName="../k8s/deployment.yaml" Line="18" Column="34" />
+      <File FileName="otus-order-service/Order.cs" Line="1" Column="1" />
+      <File FileName="otus-order-service/Program.cs" Line="1" Column="1" />
+      <File FileName="otus-order-service/Response.cs" Line="1" Column="1" />
+      <File FileName="otus-order-service/Startup.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="otus-order-service" expanded="True">
+            <Node name="docker-compose" expanded="True" />
+            <Node name="otus-order-service" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="database" expanded="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="launchSettings.json" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: application
+  name: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: application
+  template:
+    metadata:
+      labels:
+        app: application
+    spec:
+      containers:
+      - image: glacius27/repo:hw7
+        name: application
+        ports:
+        - containerPort: 80

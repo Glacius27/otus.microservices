@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>otus_order_service</RootNamespace>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="prometheus-net" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="database\" />
+    <None Remove="MongoDB.Driver" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="prometheus-net" />
+    <None Remove="prometheus-net.AspNetCore" />
+    <None Remove="prometheus-net.AspNetCore.HealthChecks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="database\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8jy3hHqERYbmB53imwi15CbvXiIV81JIBMlHwrq4hXE=",
+  "Source": "otus-order-service",
+  "BasePath": "_content/otus-order-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
